@@ -1,18 +1,14 @@
-import sucrase from '@rollup/plugin-sucrase'
-import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 import replace from 'rollup-plugin-replace'
+import { uglify } from 'rollup-plugin-uglify'
 import serve from 'rollup-plugin-serve'
 import pluginConfig from './plugin.config'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 const plugins = [
-  resolve({
-    extensions: ['.js', '.ts'],
-  }),
-  sucrase({
-    transforms: ['typescript'],
-  }),
+  typescript(),
+  isProduction && uglify(),
   !isProduction && serve('build'),
   replace({
     'process.env.BUNDLE_URL': JSON.stringify(

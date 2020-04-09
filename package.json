@@ -2,8 +2,8 @@
   "name": "auto-mf-attendance",
   "version": "0.0.3",
   "scripts": {
-    "dev": "rollup -cw",
-    "build": "rm build/**; cross-env NODE_ENV=production rollup -c --compact",
+    "dev": "webpack-dev-server",
+    "build": "rm build/**; cross-env NODE_ENV=production webpack && scripts/post-build.js",
     "postinstall": "yarn build"
   },
   "devDependencies": {
@@ -14,6 +14,7 @@
     "@rollup/plugin-typescript": "^4.0.0",
     "@types/node": "^13.11.1",
     "cross-env": "^7.0.2",
+    "fork-ts-checker-webpack-plugin": "^4.1.3",
     "husky": "^4.2.4",
     "lint-staged": "^10.1.3",
     "prettier": "^1.19.1",
@@ -24,8 +25,12 @@
     "rollup-plugin-typescript2": "^0.27.0",
     "rollup-plugin-uglify": "^6.0.4",
     "rollup-plugin-uglify-es": "^0.0.1",
+    "ts-loader": "^6.2.2",
     "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "husky": {
     "hooks": {
