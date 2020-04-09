@@ -5,7 +5,7 @@ function sleep(time = 1000) {
 }
 
 async function fillDay(tr) {
-  const a = tr.getElementsByClassName('attendance-table-icon-edit')[0]
+  const a = tr.getElementsByClassName('attendance-text-link')[0]
   a.click()
   await sleep()
   const [addButton] = document.getElementsByClassName('attendance-with-plus-icon-normally')
