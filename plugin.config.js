@@ -1,4 +1,3 @@
 module.exports = {
-  bundleUrl:
-    'https://raw.githubusercontent.com/acro5piano/auto-mf-attendance/master/build/bundle.js',
+  bundleUrl: 'https://acro5piano.github.io/auto-mf-attendance/build/bundle.js',
 }
