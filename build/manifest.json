@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "author": "kazuya gosho",
+  "name": "auto-mf-attendance",
+  "description": "auto mf attendance",
+  "version": "0.0.1",
+  "homepage_url": "https://github.com/acro5piano/auto-mf-attendance",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://attendance.moneyforward.com/my_page/attendances*"
+      ],
+      "js": [
+        "./index.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "https://attendance.moneyforward.com/my_page/attendances*"
+  ]
+}
